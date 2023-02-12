@@ -1,33 +1,31 @@
 import React from 'react'
-import { InputForm } from './InputForm'
+import { Address } from './formStepContent/Address'
+import { EndStep } from './formStepContent/EndStep'
+import { NomeContato } from './formStepContent/NomeContato'
+import { PersonalData } from './formStepContent/PersonalData'
+import { useSelector } from 'react-redux'
 
 export default function StepForm() {
 
-  const [step, setStep] = React.useState(1)
+  const state = useSelector((state) => state.stepSlice.step)
 
   function stepDisplayChose(step) {
     switch (step) {
       case 1:
-        return React.lazy(() => import('./formStepContent/NomeContato'))
+        return <NomeContato />
       case 2:
-        return React.lazy(() => import('./formStepContent/Address'))
+        return <Address />
       case 3:
-        return React.lazy(() => import('./formStepContent/PersonalData'))
+        return <PersonalData />
       case 4:
-        return React.lazy(() => import(''))
+        return <EndStep />
       default:
     }
   }
 
-  const Component = stepDisplayChose(step)
-
   return (
     <div className='w-full flex flex-col items-center justify-center gap-10'>
-      <div className='w-full flex flex-col gap-20 '>
-        <React.Suspense>
-          <Component />
-        </React.Suspense>
-      </div>
+      {stepDisplayChose(state)}
     </div>
   )
 }

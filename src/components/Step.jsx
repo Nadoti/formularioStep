@@ -27,7 +27,7 @@ export function Step({ step, currentStep, infoStep, stepOptions }) {
               backgroundColor: '#bfdbfe',
               borderColor: '#3b82f6',
               color: '#3b82f6',
-              fontWeight: 'bold'
+              fontWeight: 400
             },
             complete: {
               backgroundColor: '#3b82f6',

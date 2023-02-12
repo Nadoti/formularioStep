@@ -41,6 +41,22 @@
   }
 }
 
+.transacaoForm {
+  animation: animaForm .6s;
+}
+
+@keyframes animaForm {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 
 
 @layer base {

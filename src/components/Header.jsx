@@ -1,6 +1,7 @@
 import React from 'react'
 import { Step } from './Step'
 import { LoadingBarsStep } from './LoadingBarsStep'
+import { useSelector } from 'react-redux'
 
 const stepOptions = [
   'Nome e Contato',
@@ -11,6 +12,8 @@ const stepOptions = [
 
 export function Header() {
   const [currentStep, setCurrentStep] = React.useState(1)
+  const state = useSelector((state) => state.stepSlice.step)
+
 
   return (
     <header className='w-full'>
@@ -19,7 +22,7 @@ export function Header() {
           <Step
             key={options}
             step={index + 1}
-            currentStep={currentStep}
+            currentStep={state}
             infoStep={options}
             stepOptions={stepOptions}
           />
@@ -30,7 +33,7 @@ export function Header() {
           <LoadingBarsStep
             key={options}
             step={index + 1}
-            currentStep={currentStep}
+            currentStep={state}
           />
         ))}
 
