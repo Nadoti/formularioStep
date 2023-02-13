@@ -10,7 +10,8 @@ export function Step({ step, currentStep, infoStep, stepOptions }) {
   return (
     <div className='relative'>
 
-      <div className={`flex items-center mr-12 ${step !== stepOptions.length && 'after:w-6 after:h-[3px] after:bg-gray-400 after:content-[""] after:ml-6'}`}>
+      <div
+        className={`flex items-center mr-12 ${step !== stepOptions.length && 'after:w-6 after:h-[3px] after:bg-gray-400 after:content-[""] after:ml-6'} ${status === 'complete' && 'after:bg-blue-500'} max-[768px]:mr-2 max-[768px]:after:w-0 max-[768px]:flex-col`}>
         <motion.div
           initial={false}
           animate={status}
@@ -35,15 +36,15 @@ export function Step({ step, currentStep, infoStep, stepOptions }) {
               color: '#3b82f6'
             },
           }}
-          className='w-7 h-7 rounded-full flex items-center justify-center'
+          className='w-7 h-7 rounded-full flex items-center justify-center max-[768px]:h-5 max-[768px]:w-5'
         >
           {status === 'complete' ? (
             <CheckIcon className='h-6 w-6 text-white' />
           ) : (
-            <span className='font-bold'>{step}</span>
+            <span className='font-bold max-[768px]:text-xs text'>{step}</span>
           )}
         </motion.div>
-        <p className='text-xs ml-2 font-bold text-gray-500'>{infoStep}</p>
+        <p className='text-xs ml-2 font-bold text-gray-500 max-[768px]:text-[10px]'>{infoStep}</p>
       </div>
     </div>
   )

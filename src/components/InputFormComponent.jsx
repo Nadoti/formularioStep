@@ -14,8 +14,9 @@ const types = {
   }
 }
 
-export function InputForm({ name, value, onChange, type, label, placeholder, state, error, maxLength, ref = null }) {
+export function InputFormComponent({ name, value, onChange, type, label, placeholder, state, error, maxLength }) {
   const dispatch = useDispatch()
+  const [checkboxEndereco, setCheckboxEndereco] = React.useState(false)
 
   function validateForm(val, name) {
     if (val.length === 0) {
@@ -52,17 +53,26 @@ export function InputForm({ name, value, onChange, type, label, placeholder, sta
   }
 
   const isCep = name === 'cep'
+  const isEndereco2 = name === 'endereco_2'
 
   const handleKeyUp = React.useCallback((keyup) => {
     maskForm(keyup)
   }, [name])
+
+  function checkboxOnChange({ target }) {
+    target.checked ? dispatch(changeValueInput({ name: 'endereco_2', value: 'Não Possui', error: "" })) : dispatch(changeValueInput({ name: 'endereco_2', value: '', error: "" }))
+    setCheckboxEndereco(target.checked)
+  }
+
+  function verifyChecked(val) {
+    if (val) return true
+  }
 
   return (
     <div className='w-full flex items-end'>
       <label className='text-gray-400 w-full'>
         {label}
         <input
-          ref={ref}
           onKeyUp={handleKeyUp}
           onBlur={onBlur}
           name={name}
@@ -72,16 +82,26 @@ export function InputForm({ name, value, onChange, type, label, placeholder, sta
           onChange={onChange}
           placeholder={placeholder}
           maxLength={maxLength}
-          required
-          className="bg-transparent border-b-2 outline-none w-full transition-all duration-300 focus:border-blue-500 focus:label_text-red-500 text-blue-500  placeholder:text-blue-200 inputForm"
+          disabled={checkboxEndereco}
+          className="bg-transparent border-b-2 outline-none w-full transition-all duration-300 focus:border-blue-500 focus:label_text-red-500 text-blue-500  placeholder:text-blue-200 inputForm disabled:cursor-not-allowed"
         />
         {error && <p className='text-xs text-red-600 font-bold'>{error}</p>}
       </label>
-
+      {isEndereco2 &&
+        <label htmlFor="" className='flex items-center w-full text-right flex-[0_2_20%] text-[12px] text-gray-400 py-2 px-1 rounded-2xl gap-2 max-[768px]:text-[10px] max-[768px]:flex-[0_2_60%]'>
+          <input
+            type="checkbox"
+            value='endereco_2'
+            checked={verifyChecked(state.endereco_2.value)}
+            onChange={checkboxOnChange}
+          />
+          Não Possuo
+        </label>
+      }
       {isCep &&
-        <div className='w-full text-right flex-[0_2_20%] '>
+        <div className='w-full text-right flex-[0_2_20%] max-[768px]:flex-[0_2_60%]'>
           <a
-            className='text-[12px] text-gray-400 hover:bg-gray-200 hover:text-purple-500 py-2 px-1 rounded-2xl'
+            className='text-[12px] text-gray-400 hover:bg-gray-200 hover:text-purple-500 py-2 px-1 rounded-2xl max-[768px]:text-[10px]'
             href='https://buscacepinter.correios.com.br/app/endereco/index.php'
             target='_blank'
           >

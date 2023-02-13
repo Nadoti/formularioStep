@@ -10,15 +10,19 @@ const stepSlice = createSlice({
   initialState,
   reducers: {
     increaseStep: (state) => {
-      console.log(state.step)
       state.step++
     },
     decreaseStep: (state) => {
       state.step--
     },
+    restartStep: (state) => {
+
+      state.step = 1
+
+    }
   }
 })
 
-export const { increaseStep, decreaseStep } = stepSlice.actions
+export const { increaseStep, decreaseStep, restartStep } = stepSlice.actions
 
 export default stepSlice.reducer

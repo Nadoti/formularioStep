@@ -3,21 +3,15 @@ import { Step } from './Step'
 import { LoadingBarsStep } from './LoadingBarsStep'
 import { useSelector } from 'react-redux'
 
-const stepOptions = [
-  'Nome e Contato',
-  'Endereço',
-  'Dados Pessoais',
-  'Finalização'
-]
 
-export function Header() {
-  const [currentStep, setCurrentStep] = React.useState(1)
+
+export function Header({ stepOptions }) {
   const state = useSelector((state) => state.stepSlice.step)
 
 
   return (
     <header className='w-full'>
-      <div className='max-w-6xl my-0 mx-auto flex items-center justify-end p-8'>
+      <div className='max-w-6xl my-0 mx-auto flex items-center justify-end p-8 max-[768px]:p-4 max-[768px]:justify-center'>
         {stepOptions?.map((options, index) => (
           <Step
             key={options}

@@ -49,7 +49,7 @@ export const address = [
     name: 'endereco_1',
     type: 'text',
     placeholder: 'Seu Endereço',
-    maxLength: 50
+    maxLength: 100
   },
   {
     id: 3,
@@ -57,7 +57,7 @@ export const address = [
     name: 'endereco_2',
     type: 'text',
     placeholder: 'Seu Endereço',
-    maxLength: 50
+    maxLength: 100
   },
 ]
 
