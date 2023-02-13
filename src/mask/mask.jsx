@@ -37,7 +37,6 @@ function Formatar(valor) {
     m[i] = m[i].split('').reverse().join('') + '.';
 
   const r = m.reverse().join('');
-  console.log('caindo aki')
 
   valor.currentTarget.value = 'R$ ' + r.substring(0, r.lastIndexOf('.')) + ',' + v[1];
 }
