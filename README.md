@@ -2,7 +2,7 @@ Para começar o projeto, dê um npm install para baixar as configurações do pr
 
 É mostrado dois botões um para ver a lista de usuários cadastrados e outra para dar start no fomulário, comece criando um novo usuário clicando no botão 'NovoCliente', vai ter todas as etapas do cadastro, assim que você preencher todos, aparecerá uma mensagem que o cadastro foi realizado com sucesso, assim o usuario cadastrado irá aparecer na lista,
 
-Nesse formulário, há mascara para CPF, data de nascimento, cep e telefone.
+Nesse formulário, há mascara para CPF, data de nascimento, cep, telefone e Moeda .
 
 Nenhum campo pode estar vazio, será mostrado um erro e não pode seguir adiante tambem se algum campo estiver vazio.
 

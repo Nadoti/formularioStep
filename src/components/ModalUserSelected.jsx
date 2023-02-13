@@ -48,7 +48,7 @@ export function ModalUserSelected({ userSelected, setIsOpenModalUserSelected }) 
               data de nascimento: {userSelected?.dataNascimento.value}
             </span>
             <span>
-              renda mensal: {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(userSelected?.rendaMensal.value)}
+              renda mensal: {userSelected?.rendaMensal.value}
             </span>
           </div>
         </div>

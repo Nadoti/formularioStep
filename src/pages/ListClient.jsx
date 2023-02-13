@@ -49,7 +49,7 @@ export function ListClient({ setIsOpenModalUserSelected, setUserSelected }) {
                   <td className='py-5 px-4 border-t-2 border-b-2 border-gray-300 max-[768px]:py-3 max-[768px]:px-2 max-[768px]:text-[14px]'>{result.cpf.value}</td>
                   <td className='py-5 px-4 border-t-2 border-b-2 border-gray-300 max-[768px]:py-3 max-[768px]:px-2 max-[768px]:text-[14px]'>{result.email.value}</td>
                   <td className='py-5 px-4 border-t-2 border-b-2 border-gray-300 max-[768px]:py-3 max-[768px]:px-2 max-[768px]:text-[14px]'>{result.dataNascimento.value}</td>
-                  <td className='py-5 px-4 border-t-2 border-b-2 border-gray-300'>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(result.rendaMensal.value)}</td>
+                  <td className='py-5 px-4 border-t-2 border-b-2 border-gray-300'>{result.rendaMensal.value}</td>
                 </tr>
               ))}
             </tbody>

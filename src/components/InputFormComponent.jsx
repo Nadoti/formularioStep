@@ -48,6 +48,7 @@ export function InputFormComponent({ name, value, onChange, type, label, placeho
     }
   }
 
+
   function onBlur({ target }) {
     validateForm(target.value.trim(), target.name)
   }

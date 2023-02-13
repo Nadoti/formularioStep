@@ -64,12 +64,12 @@ export function Form({ stepOptions }) {
       <StepForm />
       <div className='flex items-center justify-center gap-10 w-full'>
 
-        <button
+        {stateStep === stepOptions.length ? '' : (<button
           type='button'
           onClick={handleDecreaseStep}
           className='bg-red-400 py-2 px-6 text-gray-100 rounded-2xl'
         >Voltar
-        </button>
+        </button>)}
         {stateStep === stepOptions.length
           ? (<button
             type='button'

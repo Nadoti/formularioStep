@@ -82,7 +82,7 @@ export const dadosPessoais = [
     id: 3,
     label: 'Renda Mensal',
     name: 'rendaMensal',
-    type: 'number',
+    type: 'string',
     placeholder: 'Sua Renda'
   },
 ]
