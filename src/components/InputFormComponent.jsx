@@ -51,6 +51,19 @@ export function InputFormComponent({ name, value, onChange, type, label, placeho
 
   function onBlur({ target }) {
     validateForm(target.value.trim(), target.name)
+    if (target.name === 'cpf') {
+      let valueWithoutMask = state.cpf.value.replace(/\./g, '').replace('-', '')
+      const takeLocal = JSON.parse(localStorage.getItem('listUser'))
+      if (takeLocal === null || takeLocal === undefined === takeLocal === '') {
+        return
+      } else {
+        takeLocal.filter(val => {
+          let valueFilterWithoutMask = val.cpf.value.replace(/\./g, '').replace('-', '')
+          valueFilterWithoutMask === valueWithoutMask && dispatch(changeValueInput({ name: 'cpf', value: '', error: 'CPF já cadastrado!' }))
+        })
+        return
+      }
+    }
   }
 
   const isCep = name === 'cep'

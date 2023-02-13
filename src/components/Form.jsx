@@ -15,13 +15,6 @@ export function Form({ stepOptions }) {
 
 
   function handleIncreaseStep() {
-    const takeLocal = JSON.parse(localStorage.getItem('listUser'))
-    if (takeLocal) {
-      takeLocal.filter(val => {
-        val.cpf.value === stateDataInput.cpf.value && dispatch(changeValueInput({ name: 'cpf', value: '', error: 'CPF já cadastrado!' }))
-        return
-      })
-    }
 
     for (const key in stateTakeObject) {
       if (stateDataInput[key].value === '') {
@@ -42,7 +35,6 @@ export function Form({ stepOptions }) {
 
   function handleSubmitForm() {
     let takeGetItemLocalStorage = JSON.parse(localStorage.getItem('listUser'))
-    console.log(takeGetItemLocalStorage)
     if (takeGetItemLocalStorage === undefined || takeGetItemLocalStorage === null || takeGetItemLocalStorage === '') {
       const setNewUser = [stateDataInput]
       localStorage.setItem('listUser', JSON.stringify(setNewUser))
