@@ -42,13 +42,13 @@ export function ModalUserSelected({ userSelected, setIsOpenModalUserSelected }) 
               endereço 1: {userSelected?.endereco_1.value}
             </span>
             <span>
-              endereço 2:{userSelected?.endereco_2.value}
+              endereço 2: {userSelected?.endereco_2.value}
             </span>
             <span>
               data de nascimento: {userSelected?.dataNascimento.value}
             </span>
             <span>
-              renda mensal: {userSelected?.rendaMensal.value}
+              renda mensal: {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(userSelected?.rendaMensal.value)}
             </span>
           </div>
         </div>
