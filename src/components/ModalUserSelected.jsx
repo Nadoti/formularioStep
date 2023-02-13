@@ -7,16 +7,16 @@ export function ModalUserSelected({ userSelected, setIsOpenModalUserSelected }) 
   }
 
   return (
-    <section className='absolute flex items-center justify-center transacaoForm w-full h-full bg-[rgba(0,0,0,0.4)] max-[768px]:py-10 max-[768px]:px-4 max-[768px]:h-screen'>
-      <div className='bg-gray-200 py-5 px-10 relative rounded-2xl h-96 items-center justify-center flex max-[768px]:h-full '>
+    <section className='absolute flex items-center justify-center transacaoForm w-full h-full bg-[rgba(0,0,0,0.4)] max-[768px]:py-10 max-[768px]:px-4 max-[768px]:h-screen max-[1024px]:py-20 '>
+      <div className='bg-gray-200 py-5 px-10 relative rounded-2xl h-96 items-center justify-center  max-[1024px]:h-full flex max-[1024px]:px-4 max-[768px]:h-full '>
         <button
           onClick={closeModal}
           className='absolute -top-4 -right-4 bg-red-500 text-white w-10 h-10 rounded-full hover:scale-110 transition duration-300'
         >
           X
         </button>
-        <div className='flex items-center justify-between gap-40 max-[768px]:flex-col max-[768px]:gap-4 max-[768px]:h-full max-[768px]:items-baseline max-[768px]:justify-start'>
-          <div className='flex flex-col gap-4 '>
+        <div className=' flex items-center justify-between gap-40 max-[1024px]:flex-col max-[1024px]:h-full max-[1024px]:gap-4 max-[1024px]:items-start max-[1024px]:justify-start max-[768px]:flex-col max-[768px]:gap-4 max-[768px]:h-full max-[768px]:items-baseline max-[768px]:justify-start'>
+          <div className='flex flex-col gap-4 flex-wrap'>
             <span>
               nome: {userSelected?.nome.value}
             </span>
@@ -38,7 +38,7 @@ export function ModalUserSelected({ userSelected, setIsOpenModalUserSelected }) 
             <span>
               cep: {userSelected?.cep.value}
             </span>
-            <span>
+            <span className='flex flex-wrap'>
               endereço 1: {userSelected?.endereco_1.value}
             </span>
             <span>

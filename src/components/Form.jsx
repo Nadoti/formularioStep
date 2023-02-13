@@ -42,13 +42,14 @@ export function Form({ stepOptions }) {
 
   function handleSubmitForm() {
     let takeGetItemLocalStorage = JSON.parse(localStorage.getItem('listUser'))
-    if ((takeGetItemLocalStorage !== undefined || takeGetItemLocalStorage !== null || takeGetItemLocalStorage !== '') && takeGetItemLocalStorage.length) {
-      takeGetItemLocalStorage.push(stateDataInput)
-    } else {
+    console.log(takeGetItemLocalStorage)
+    if (takeGetItemLocalStorage === undefined || takeGetItemLocalStorage === null || takeGetItemLocalStorage === '') {
       const setNewUser = [stateDataInput]
       localStorage.setItem('listUser', JSON.stringify(setNewUser))
+    } else {
+      takeGetItemLocalStorage.push(stateDataInput)
+      localStorage.setItem('listUser', JSON.stringify(takeGetItemLocalStorage))
     }
-    localStorage.setItem('listUser', JSON.stringify(takeGetItemLocalStorage))
     dispatch(handleListClient())
     dispatch(restartStep())
     Object.keys(stateDataInput).forEach((val) => {

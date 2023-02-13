@@ -22,7 +22,7 @@ export function ListClient({ setIsOpenModalUserSelected, setUserSelected }) {
   }
 
   return (
-    <section className='flex items-center justify-center flex-col transacao max-[768px]:px-4 max-[768px]:h-[35rem]'>
+    <section className='flex items-center justify-center flex-col px-4 transacao max-[768px]:px-4 max-[768px]:h-[35rem]'>
       <h3 className='text-3xl text-gray-300 font-bold mb-8 max-[768px]:text-lg max-[768px]:mt-4'>Lista de clientes cadastrados</h3>
       <div className='w-full max-w-7xl h-[40rem] my-0 mx-auto border-2 border-gray-300 rounded-2xl flex flex-col overflow-hidden  max-[768px]:h-full '>
         <div className='w-full py-2 px-4 text-right border-t-8 border-blue-500 border-b-2 border-b-gray-300' />
