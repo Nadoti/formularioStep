@@ -6,6 +6,8 @@ Nesse formulário, há mascara para CPF, data de nascimento, cep, telefone e Moe
 
 Nenhum campo pode estar vazio, será mostrado um erro e não pode seguir adiante tambem se algum campo estiver vazio.
 
+No campo de cep, informe ele que automaticamente será preenchido o endereço, apenas informe o número ao lado do 'n°:'.
+
 Caso não saiba o seu CEP, terá um link ao lado campo na qual irá te direcionar para o site do viacep.
 
 Na lista de usuários ao clicar em um, aparecerá as informações dele.

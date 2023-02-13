@@ -42,7 +42,7 @@ export function Form({ stepOptions }) {
 
   function handleSubmitForm() {
     let takeGetItemLocalStorage = JSON.parse(localStorage.getItem('listUser'))
-    if (takeGetItemLocalStorage.length) {
+    if ((takeGetItemLocalStorage !== undefined || takeGetItemLocalStorage !== null || takeGetItemLocalStorage !== '') && takeGetItemLocalStorage.length) {
       takeGetItemLocalStorage.push(stateDataInput)
     } else {
       const setNewUser = [stateDataInput]
